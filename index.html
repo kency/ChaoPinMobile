@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+	 
+<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>潮品ChaoPin.cc</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+<link  href="theme/mchaopincc/mchaopincc.min.css" rel="stylesheet" type="text/css" />
+<link  href="theme/chaopincc/main.css" rel="stylesheet" type="text/css" />
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+<script src="js/chaopinapi.js"></script>
+</head>
+<body>
+ <div data-role="page" id="index">
+<div id="waterfall"></div>
+</div>
+<div data-role="page" id="category">
+</div>
+ <div data-role="page" id="shareview">
+      <div id="headerWXChaopinhui"><a href="/" onclick="loadData('index')"><img src="images/headerWXChaopinhui.png" /></a> </div>
+      <a href="#shareviewPics" data-transition="flip"><div id="itempic"></div><div id="otherPics" class="otherPics"></div></a>
+<div data-role="content">
+<a href="#" data-role="button" data-icon="info" data-theme="e" id="buyButton"><span  id="buyinfo">查看更多详情</span></a>
+<ul class="list" >
+     <li><a href="#" id="pushProfile"><span><img id="posteravatar" /></span><span id="postername"></span></a><p id="itemintro"></p></li>
+    </ul>
+ <p id="commentsTotal"></p><ul class="list"  id="commentslist"></ul>
+ 
+ <form>
+     <input type="text" data-clear-btn="true" name="newComment" id="newComment" value="" placeholder="输入评论内容">
+     <input type="submit" value="提交" />
+</form>
+<div><h2 id="shareview_albumname">所属专辑</h2><div id="shareview_albumpics" class="otherPics"></div><h2 id="shareview_albumname">您还可能喜欢</h2><div id="shareview_maybelikes" class="otherPics"></div></div>
+      
+ <div id="waterfall"></div>
+
+      <div >
+        <h5>寻找更多身边的潮人潮品</h5>
+         <a href="#" data-role="button" data-icon="download" data-theme="b" ><span>下载潮品会客户端</span></a>
+      </div><!-- /header -->
+</div><!-- /content -->
+</div><!-- /page -->
+ 
+ 
+     <div data-role="page" id="shareviewPics">
+    <div data-role="content" data-theme="E">
+    <a href="#shareview" data-transition="flip"><div id="itemPics"></div></a>
+      </div><!-- /content -->
+  </div><!-- /page -->
+ <script type="text/javascript">$( document ).ready(function(){main();})</script>
+   <!--
+<script type="text/javascript" src="http://js.tongji.linezing.com/1223530/tongji.js"></script><noscript><a href="http://www.linezing.com"><img src="http://img.tongji.linezing.com/1223530/tongji.gif"/></a></noscript>
+-->
+</body>
+
+</html>

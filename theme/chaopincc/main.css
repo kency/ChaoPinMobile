@@ -1,0 +1,103 @@
+@charset "UTF-8";
+h2{
+	font-size:14px;
+	font-style:oblique;
+	clear:both;}
+	
+/*shareview*/
+#itempic {
+	min-height:300px;
+width:100%;
+}
+#itempic img{width:100%;}
+.otherPics div{
+	height: 50px;
+	width: 50px;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	border: 2px solid #333;
+	display: block;
+	overflow: hidden;
+	background-color: #666;
+	float:left;
+}
+.otherPics img{width:100%;}
+#otherPics {
+	width:310px;
+	height:60px;
+	margin-top: -70px;
+	margin-left: 5px; 
+	position: relative;
+z-index: 2;
+}
+#headerWXChaopinhui{
+	display: block;
+	position:fixed;
+	z-index:991;
+}
+#headerWXChaopinhui img{
+	height:50px;
+	}
+.list{padding:0}
+.list li{
+font-size: 13px;
+padding-top: 5px;
+list-style: none;
+}
+.list em{
+	font-size: 13px;
+	color: #AAA;
+}
+.list li img{
+	background:#EEE;
+	margin-right : 10px;
+	height: 35px;
+	width: 35px;
+	border: 2px solid #DDD;
+	float: left;
+
+}
+/*shareview */
+#shareviewPics{
+	background-color: #CCC;
+	background-image: url(loading2.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#postername{	}
+#itemintro{
+	font-size: 14px;
+	margin: 5px;
+
+	}
+#commentsTotal{
+padding-left: 50px;
+font-size: 13px;
+color: #AAA;
+line-height:5px;
+}
+#commentslist{margin-left: 40px;
+padding-left: 10px;
+background-color: #E0E0E0;}
+/*waterfall*/
+#waterfall{clear:both;}
+#waterfall div{
+	float:left;
+	display:block;
+	margin-left: 10px;
+	margin-top: 10px;
+
+}
+ #waterfall img {
+	width:100%;
+	border:1px dashed #ccc;
+	display: inline-block;
+	z-index:-1;
+	-webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+                //-webkit-transform: rotate(2deg) translate(-1px,2px) skew(-20deg);  
+                //-moz-transform: rotate(2deg) translate(-1px,2px) skew(-20deg);  
+                //-o-transform: rotate(2deg) translate(-1px,2px) skew(-20deg);  
+                //transform: rotate(2deg) translate(-1px,2px) skew(-20deg);  
+            }  

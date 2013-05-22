@@ -8,10 +8,11 @@ function main(){
 	$( document ).bind( 'mobileinit', function(){
   $.mobile.loader.prototype.options.text = "精彩马上呈现";
   $.mobile.loader.prototype.options.textVisible = false;
-  $.mobile.loader.prototype.options.theme = "e";
+  $.mobile.loader.prototype.options.theme = "c";
   $.mobile.loader.prototype.options.html = "";
   $.mobile.defaultPageTransition="slide";
-});
+  });
+	
 	loadStart();
 	//动作检测 m.chaopin.cc/?c=share&m=view&id=5 html里page的 id与这个对应  #shareview
 	var controller=getQueryString('c');
@@ -65,7 +66,12 @@ function loadData(controller,action,Extra){
 	eval("loadData_"+f+"(f,Extra)");
 	
 	}
-	
+
+function loadView(v){//暂 无调用
+	loadViewStart();
+eval(v+"()");
+}//end function
+//loading...	
 
 function loadData_index(v){
 				$.getJSON(_apiBaseUrl+"discovery/index?jsoncallback=?", function(data){
@@ -77,21 +83,15 @@ function loadData_index(v){
 				
 		return;
 		}
-function loadView(v){//暂 无调用
-	loadViewStart();
-eval(v+"()");
-}//end function
-//loading...
-
-
-
-//all views function
 function loadView_index(data){
 	loadViewFinish();
 	var items=data.item;
 	waterfall_add(items);
 	
 	}
+
+
+
 	function loadData_shareview(v,id){
 		if (id==null | id==""){
 		var shareId=getQueryString('id');
@@ -117,24 +117,33 @@ function loadView_shareview(data){
 													// $("<img>").prop({src:data.itempic}).appendTo("#itempic");
 														//	$("#itempic").prop({src:data.itempic});
 															 $("#otherPics").html("");
-															if (data.itempics.length>1){
-															$.each(data.itempics, function(i,pic){
-																							  
-																								  $("<div>").html('<img src="'+pic.picurl+'" />').appendTo("#otherPics");
-																								   });
-															}
-															$("#itemintro").html(data.itemintro);
-															if(data.itemprice>0){
-																$("#buyinfo").click(function( event ) {window.location.href=data.itembuyurl;});
-															$("#buyinfo").html('￥'+data.itemprice+' 查看商品详情');
-															}else{
-																$("#buyButton").remove();
-															}
+															 $("#itemPics").html("");
 															
-															$("#posteravatar").prop({src:data.posteravatar});
-															$("#postername").html(data.postername+'<br />');
+															
+															//$("#itemPics").prop({width:100*data.itempics.length+'%'});
+															$.each(data.itempics, function(i,pic){
+																if (data.itempics.length>1){							  
+																$("<div>").html('<img src="'+pic.picurl_square+'" />').appendTo("#otherPics");
+																$("<ul>").html('<li><img src="'+pic.picurl+'" /></li>').appendTo("#itemPics");
+																}else{
+																	$("<ul>").html('<li><img src="'+pic.picurl+'" /></li>').appendTo("#itemPics");
+																	}
+																								   });
+															$("#itemPic").bxSlider();
+																
+															
+																$("#itemintro").html(data.itemintro);
+																if(data.itemprice>0){
+																	$("#buyinfo").click(function( event ) {window.location.href=data.itembuyurl;});
+																	$("#buyinfo").html('￥'+data.itemprice+' 查看商品详情');
+																}else{
+																	$("#buyButton").remove();
+																}
+															
+																$("#posteravatar").prop({src:data.posteravatar});
+																$("#postername").html(data.postername+'<br />');
 																$("#pushProfile").click(function( event ) {window.location.href=data.itembuyurl;});
-															$("#albumtitle").html(data.albumtitle+'<br />');
+																$("#albumtitle").html(data.albumtitle+'<br />');
 																$("#pushAlbum").click(function( event ) {window.location.href=data.itembuyurl;});
 															//评论
 															$("#commentsTotal").html("");
